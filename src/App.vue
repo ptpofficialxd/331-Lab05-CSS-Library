@@ -9,13 +9,15 @@ const { message } = storeToRefs(store)
 </script>
 
 <template>
-  <header class="max-h-screen leading-normal">
-    <div id="flashMessage" v-if="message" class="animate-yellowfade">
-      <h4 class="text-lg">{{ message }}</h4>
+  <header class="max-h-screen leading-normal flex flex-col justify-center bg-pink-300 margin-bottom: 50px">
+    <div id="flashMessage" v-if="message" class="bg-yellow-100 transition duration-3000">
+      <h4 class="text-20"> {{ message }}</h4>
     </div>
-    <nav class="p-8">
-      <RouterLink :to="{ name: 'event-list' }" class="font-bold text-gray-700 hover:text-green-500">Home</RouterLink>
-      <RouterLink :to="{ name: 'about' }" class="font-bold text-gray-700 hover:text-green-500">About</RouterLink>
+    <nav class="p-10 font-bold">
+      <RouterLink class="mx-2 text-xl text-blue-800 hover:text-red-500" :to="{ name: 'event-list' }">Home</RouterLink>
+      <RouterLink class="mx-2 text-xl text-blue-800 hover:text-red-500" :to="{ name: 'about' }">About</RouterLink>
+      <RouterLink class="mx-2 text-xl text-blue-800 hover:text-red-500" :to="{ name: 'organizer' }">Organizer</RouterLink>
+      <RouterLink class="mx-2 text-xl text-blue-800 hover:text-red-500" :to="{ name: 'student' }">Student</RouterLink>
     </nav>
   </header>
   <RouterView />
@@ -30,17 +32,8 @@ const { message } = storeToRefs(store)
   color: #2c3e50;
 }
 
-@keyframes yellowfade {
-  from {
-    background: yellow;
-  }
-
-  to {
-    background: transparent;
-  }
+h4 {
+  font-size: 20px;
 }
 
-.animate-yellowfade {
-  animation: yellowfade 3s ease-in-out;
-}
 </style>

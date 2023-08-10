@@ -36,8 +36,8 @@ function edit() {
 </script>
 
 <template>
-    <p>Edit the event here</p>
-    <button @click="edit">Register Me</button>
+    <p class="mt-6 mb-6 font-bold text-2xl">Edit the event here</p>
+    <button @click="edit" class="rounded-full px-4 py-2 bg-orange-400 text-xl font-bold text-white">Edit Me</button>
 </template>
 
 

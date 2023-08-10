@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import EventListView from '../views/EventListView.vue'
 import AboutView from '../views/AboutView.vue'
+import EventOrganizerView from '../views/EventOrganizerView.vue'
+import StudentListView from "../views/StudentListView.vue"
 import EventDetailView from "../views/event/EventDetailView.vue"
 import EventEditView from "../views/event/EventEditView.vue"
 import EventRegisterView from "../views/event/EventRegisterView.vue"
@@ -25,8 +27,16 @@ const router = createRouter({
       name: 'about',
       component: AboutView
     },
-
-
+    {
+      path: '/organizer',
+      name: 'organizer',
+      component: EventOrganizerView
+    },
+    {
+      path: '/student',
+      name: 'student',
+      component: StudentListView
+    },
     {
       path : '/event/:id',
       name : 'event-layout',
@@ -36,6 +46,7 @@ const router = createRouter({
         const eventStore = useEventStore()
         return EventService.getEventById(id)
         .then((response) => {
+          console.log(response.data)
           eventStore.setEvent(response.data)
         }).catch((error) => {
           if (error.response && error.response.status === 404) {

@@ -20,10 +20,10 @@ const id = ref(event?.value?.id)
     <div>
         <div v-if="event">
             <h1>{{ event.title }}</h1>
-            <div id="nav">
-                <RouterLink :to="{ name: 'event-detail', params: { id } }">Details</RouterLink>
-                <RouterLink :to="{ name: 'event-register', params: { id } }">Register</RouterLink>
-                <RouterLink :to="{ name: 'event-edit', params: { id } }">Edit</RouterLink>
+            <div class="mt-4 mb-4" id="nav">
+                <RouterLink class="text-lg font-bold mx-2 text-green-600 hover:text-red-500" :to="{ name: 'event-detail', params: { id } }">Details</RouterLink>
+                <RouterLink class="text-lg font-bold mx-2 text-green-600 hover:text-red-500" :to="{ name: 'event-register', params: { id } }">Register</RouterLink>
+                <RouterLink class="text-lg font-bold mx-2 text-green-600 hover:text-red-500" :to="{ name: 'event-edit', params: { id } }">Edit</RouterLink>
             </div>
             <RouterView :event="event"></RouterView>
         </div>

@@ -1,8 +1,7 @@
 <template>
-    <RouterLink class="text-gray-700 no-underline" :to="{ name: 'event-detail', params: { id: event?.id } }">
-        <div class="mb-4">
-            <div
-                class="p-5 w-64 cursor-pointer border border-gray-800 transform transition-transform duration-200 hover:scale-101 hover:shadow-md">
+    <RouterLink class="event-link mt-8 bg-yellow-100" :to="{ name: 'event-detail', params: { id: event?.id } }">
+        <div class="event-class">
+            <div class="event-card">
 
                 <span>@{{ event?.time }} on {{ event?.date }}</span>
                 <h4>{{ event?.title }}</h4>
@@ -23,3 +22,21 @@ const props = defineProps({
 </script>
 
 
+<style scoped>
+.event-card {
+    padding: 20px;
+    width: 250px;
+    cursor: pointer;
+    border: 1px solid #39495c;
+}
+
+.event-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3px 12px 0 rgb(0, 0, 0, 0.2);
+}
+
+.event-link {
+    color: #2c3e50;
+    text-decoration: none;
+}
+</style>

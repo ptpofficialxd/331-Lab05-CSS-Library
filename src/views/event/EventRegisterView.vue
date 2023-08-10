@@ -35,8 +35,9 @@ function register() {
 </script>
 
 <template>
-    <p>Registration from here</p>
-    <button @click="register">Register Me</button>
+    <p class="mt-6 mb-6 font-bold text-2xl">Registration from here</p>
+    <button @click="register" class="rounded-full px-4 py-2 bg-orange-400 text-xl font-bold text-white">Register Me</button>
+
 </template>
 
 
